@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     ImageButton mainIcon ;
-    Button myPage_btn, bulletin_btn, rr_btn ;
+    Button myPage_btn, bulletin_btn, rr_btn, reserve ;
     TextView notice_cont, todayMenu_cont ;
 
 
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         rr_btn = (Button) findViewById(R.id.rr_btn);
         notice_cont = (TextView) findViewById(R.id.notice_cont);
         todayMenu_cont = (TextView) findViewById(R.id.todayMenu_cont);
+        reserve= (Button) findViewById(R.id.reserve);
+
 
         myPage_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+        reserve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getApplicationContext(),reserve.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
     public void Clickhome(View view) {
@@ -61,7 +72,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-}
+    public void ClickButton(View view) {
+        Toast.makeText(getApplicationContext(),"예약이 완료되었습니다.",Toast.LENGTH_SHORT).show();
+    }
+    }
+
 
 
 
